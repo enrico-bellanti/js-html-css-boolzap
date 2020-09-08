@@ -126,6 +126,7 @@ nav .notifications{
   display: flex;
   height: 60px;
   background-color: #8edafc;
+  cursor: pointer;
 }
 .img_notifications_container{
   display: flex;
@@ -247,20 +248,25 @@ nav .contact_list ul{
   height: calc(100% - 100px);
   padding: 30px;
   background-image: url(../img/mine.jpg);
+  overflow: scroll;
 }
 
 /* TEMPLATE MESSAGE CONTACT LI */
-.text_input{
+.text_screen{
   list-style: none;
 }
 li.input_text{
   display: flex;
-  background-color: green;
+  margin: 5px 0;
 }
 .input_text .cloud_text{
   max-width: 300px;
-  padding: 20px;
+  padding: 15px;
   border-radius: 5px;
+  word-break: break-all;
+}
+.input_text .cloud_text p{
+  /* word-break: break-all; */
 }
 /* green */
 li.input_text.green{
