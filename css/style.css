@@ -55,6 +55,10 @@ a{
 .template_slide_info_text_wrapper_top h4{
   font-weight: 500;
 }
+.template_slide_info_text_wrapper_top span{
+  font-size: 10px;
+  color: #888;
+}
 
 .template_slide_info_wrapper p{
   font-size: 10px;
@@ -83,7 +87,7 @@ nav.aside_nav{
   width: 30%;
 }
 
-/* NAV HEADER*/
+/* NAV HEADER ASIDE*/
 nav .header_aside_nav{
   display: flex;
   justify-content: space-between;
@@ -95,7 +99,7 @@ nav .header_aside_nav{
   width: 50px;
   height: 100%;
 }
-
+/* HEADER LEFT PANEL */
 .panel_account{
   width: 100px;
 }
@@ -115,7 +119,7 @@ nav .header_aside_nav{
   color: #b1b1b1;
 }
 
-/* --- */
+/* NOTIFICATION  */
 nav .notifications{
   display: flex;
   height: 60px;
@@ -153,7 +157,7 @@ nav .notifications{
   text-decoration: underline;
 }
 
-
+/* SEARCH BAR */
 nav .search_bar{
   display: flex;
   align-items: center;
