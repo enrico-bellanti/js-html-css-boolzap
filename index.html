@@ -181,10 +181,18 @@
             </ul>
           </div>
         </div>
-        <div class="message_contact_main"></div>
+        <div class="message_contact_main">
+          <ul class="text_screen">
+            <li class="input_text green">
+              <div class="cloud_text">
+                <p>lorem</p>
+              </div>
+            </li>
+          </ul>
+        </div>
         <div class="message_contact_input_text">
           <div class="emoticon_container"><i class="far fa-smile"></i></div>
-          <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+          <input id="text_input" type="text" name="" value="" placeholder="Scrivi un messaggio">
           <div class="send_button_container">
             <a href="#" id="send_button">
               <i class="fas fa-paper-plane"></i>
@@ -198,7 +206,7 @@
     </div>
     <!-- /container di 80% -->
 
-    <!-- template -->
+    <!-- template contatti -->
     <div class="template_slide d_none">
       <div class="template_slide_img_wrapper">
         <img class="avatar" src="" alt="avatar">
@@ -211,7 +219,15 @@
         <p></p>
       </div>
     </div>
-    <!-- /template -->
+    <!-- /template contatti -->
+
+    <!-- template input text -->
+    <li class="template input_text d_none">
+      <div class="cloud_text">
+        <p></p>
+      </div>
+    </li>
+    <!-- /template input text -->
 
 
     <script src="js/script.js" charset="utf-8"></script>

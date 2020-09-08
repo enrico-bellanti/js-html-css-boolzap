@@ -3,3 +3,33 @@
 //  e dall’interlocutore (bianco) assegnando due classi CSS diverse
 // Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e cliccando
 //  invia il testo viene aggiunto al thread sopra, come messaggio verde
+
+
+$(document).ready(function() {
+
+  // creo una funzione che al click del bottone send registra
+  // il valore su una variabile
+  // azzera la chat input
+  $( "#send_button" ).click(function() {
+      var text = $("#text_input").val();
+      console.log(text);
+      $("#text_input").val("");
+      // fai una copia del template template_input_text
+      var cloudText = $(".template.input_text").clone();
+      // inserisci il testo text nel cloudText
+      cloudText.children($(".cloud_text p")).text(text);
+      cloudText.removeClass("d_none");
+      // inserisci la classe green
+      cloudText.addClass("green");
+      console.log(cloudText);
+      // appendi il nuovo oggetto al li nella text area nell'html
+      $("ul.text_screen").append(cloudText);
+  });
+
+
+
+
+
+
+// end document ready
+});
