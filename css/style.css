@@ -1,0 +1,125 @@
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+body{
+  background-color: #009688;
+}
+
+/* default */
+a{
+  text-decoration: none;
+}
+
+.container{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 80%;
+  height: calc(100vh - 40px);
+  margin: 20px auto;
+}
+
+.list-inline{
+ display: flex;
+ list-style: none;
+}
+.template.d_none{
+  display: none;
+}
+
+/* TEMPLATE */
+.template{
+  display: flex;
+  width: 100%;
+  height: 60px;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  background-color: #fff;
+}
+.info_contact_name{
+  display: flex;
+  justify-content: space-between;
+}
+img.avatar{
+  width: 60px;
+  padding: 5px;
+  border-radius: 50%;
+}
+.info_contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 10px;
+  width: calc(100% - 50px);
+}
+
+
+/* section */
+.aside_nav, .text_area{
+  height: 100%;
+}
+/* NAV */
+nav.aside_nav{
+  width: 30%;
+}
+
+/* NAV > */
+nav .header_aside_nav{
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  background-color: #eaeaea;
+}
+
+.img_account img.avatar{
+  width: 50px;
+  height: 100%;
+}
+
+.panel_account{
+  width: 100px;
+}
+
+.panel_account ul li{
+  display: flex;
+  width: calc(100% / 3);
+  height: 50px;
+}
+
+.panel_account ul li a{
+  margin: auto;
+  color: #b1b1b1;
+}
+
+/* --- */
+nav .notifications{
+  height: 60px;
+  background-color: #8edafc;
+}
+
+nav .search_bar{
+  height: 40px;
+  /* background-color: #eaeaea; */
+  background-color: lightgreen;
+}
+
+/* CONTACT LIST */
+nav .contact_list{
+  height: calc(100% - 150px);
+  background-color: #e9ebeb;
+}
+nav .contact_list ul{
+  list-style: none;
+}
+nav .contact_list li{
+}
+
+
+
+/* INPUT AREA */
+.text_area{
+  width: 70%;
+  background-color: #fff;
+}
