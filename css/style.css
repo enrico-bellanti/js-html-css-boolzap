@@ -55,9 +55,7 @@ a{
 .template_slide_info_text_wrapper_top h4{
   font-weight: 500;
 }
-.template_slide_info_wrapper h4{
-  font-weight: 500;
-}
+
 .template_slide_info_wrapper p{
   font-size: 10px;
   color: #888;
@@ -110,10 +108,11 @@ nav .header_aside_nav{
 
 .panel_account ul li a{
   margin: auto;
-  color: #b1b1b1;
+
 }
 .panel_account ul li a i{
   font-size: 16px;
+  color: #b1b1b1;
 }
 
 /* --- */
@@ -149,8 +148,9 @@ nav .notifications{
 }
 .text_notifications_container p{
   margin-top: 2px;
-  text-decoration: underline;
   font-size: 11px;
+  color: #888;
+  text-decoration: underline;
 }
 
 
@@ -199,18 +199,95 @@ nav .contact_list ul{
   background-color: #fff;
 }
 
-/* MESSAGE AREA SECTION */
+/* MESSAGE AREA SECTIONs */
+
+/* HEADER CONTACT AREA */
 .message_contact_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 50px;
   background-color: #eaeaea;
 }
+.message_contact_header_left{
+  display: flex;
+}
+.message_contact_header_left_info{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.message_contact_header_left_info h4{
+  font-weight: 500;
+}
 
+.message_contact_header_left_info p{
+  font-size: 10px;
+  color: #888;
+}
+.contact_panel_account ul li{
+  padding: 0 10px;
+}
+
+.contact_panel_account ul li a i{
+  font-size: 16px;
+  color: #b1b1b1;
+
+}
+
+
+/* MAIN CONTACT AREA */
 .message_contact_main{
-  height: calc(100% - 110px);
+  height: calc(100% - 100px);
  background-image: url(../img/mine.jpg);
 }
 
+/* TEXT INPUT CONTACT AREA */
 .message_contact_input_text{
-  height: 60px;
-  color: #f3eeea;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 5px;
+  background-color: #f3eeea;
+  color: #6b7376;
+}
+.message_contact_input_text input{
+  width: 80%;
+  height: 35px;
+  padding: 5px;
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 10px;
+}
+.emoticon_container{
+  width: 10%;
+  text-align: center;
+}
+.emoticon_container i{
+  font-size: 20px;
+}
+.send_button_container{
+  width: 10%;
+  text-align: center;
+}
+#send_button {
+  color: #6b7376;
+}
+#send_button i{
+  font-size: 20px;
+}
+
+/* FOCUS INPUT AREA */
+.send_button_container .fa-paper-plane{
+  display: none;
+}
+.message_contact_input_text input:focus ~ .send_button_container .fa-paper-plane{
+  display: block;
+}
+.send_button_container .fa-microphone{
+  display: block;
+}
+.message_contact_input_text input:focus ~ .send_button_container .fa-microphone{
+  display: none;
 }
