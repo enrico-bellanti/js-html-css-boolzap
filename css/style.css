@@ -29,19 +29,17 @@ a{
  display: flex;
  list-style: none;
 }
-.template_slide.d_none{
-  display: none;
-}
-.template_input_text.d_none{
+
+/* TEMPLATEs */
+.template{
   display: none;
 }
 
-.template_slide.active{
+.contact.active{
   background-color: #e9ebeb;
 }
 
-/* TEMPLATE */
-.template_slide{
+.contact{
   display: flex;
   width: 100%;
   height: 60px;
@@ -50,33 +48,35 @@ a{
   background-color: #fff;
   cursor: pointer;
 }
-.template_slide_info_text_wrapper_top{
+.contact_info_top{
   display: flex;
   justify-content: space-between;
 }
-.template_slide_info_text_wrapper_top h4{
-  font-weight: 500;
-}
-.template_slide_info_text_wrapper_top span{
-  font-size: 10px;
-  color: #888;
-}
 
-.template_slide_info_wrapper p{
-  font-size: 10px;
-  color: #888;
-}
-img.avatar{
-  width: 60px;
-  padding: 5px;
-  border-radius: 50%;
-}
-.template_slide_info_wrapper {
+.contact_info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 10px 10px;
   width: calc(100% - 50px);
+}
+
+h4.contact_name{
+  font-weight: 500;
+}
+span.last_typed_time{
+  font-size: 10px;
+  color: #888;
+}
+
+p.last_typed_message{
+  font-size: 10px;
+  color: #888;
+}
+.avatar{
+  width: 60px;
+  padding: 5px;
+  border-radius: 50%;
 }
 
 
@@ -85,23 +85,24 @@ img.avatar{
   height: 100%;
 }
 /* NAV */
-nav.aside_nav{
+.aside_nav{
   width: 30%;
 }
 
 /* NAV HEADER ASIDE*/
-nav .header_aside_nav{
+.aside_nav .header{
   display: flex;
   justify-content: space-between;
   height: 50px;
   background-color: #eaeaea;
 }
+/* /NAV HEADER ASIDE*/
 
-.img_account img.avatar{
+.img_account .avatar{
   width: 50px;
   height: 100%;
 }
-/* HEADER LEFT PANEL */
+/* HEADER ACCOUNT PANEL */
 .panel_account{
   width: 100px;
 }
@@ -120,20 +121,22 @@ nav .header_aside_nav{
   font-size: 16px;
   color: #b1b1b1;
 }
+/* /HEADER ACCOUNT PANEL */
+
 
 /* NOTIFICATION  */
-nav .notifications{
+.aside_nav .notifications{
   display: flex;
   height: 60px;
   background-color: #8edafc;
   cursor: pointer;
 }
-.img_notifications_container{
+.img_notifications{
   display: flex;
   width: 60px;
   height: 60px;
 }
-.img_notifications_container i{
+.img_notifications i{
   margin: auto;
   width: 40px;
   height: 40px;
@@ -145,23 +148,25 @@ nav .notifications{
   border-radius: 50%;
 }
 
-.text_notifications_container{
+.text_notifications{
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.text_notifications_container h4{
+.text_notifications h4{
   font-weight:500;
 }
-.text_notifications_container p{
+.text_notifications p{
   margin-top: 2px;
   font-size: 11px;
   color: #888;
   text-decoration: underline;
 }
+/* /NOTIFICATION  */
+
 
 /* SEARCH BAR */
-nav .search_bar{
+.aside_nav .search_bar{
   display: flex;
   align-items: center;
   height: 40px;
@@ -188,20 +193,24 @@ nav .search_bar{
   border-left: 0;
   color: #888;
 }
+/* /SEARCH BAR */
+
 
 /* CONTACT LIST */
-nav .contact_list{
+.aside_nav .contact_list{
   height: calc(100% - 150px);
   background-color: #fff;
-  overflow: scroll;
+  overflow-y: scroll;
 }
-nav .contact_list ul{
+.aside_nav .contact_list ul{
   list-style: none;
 }
+/* /CONTACT LIST */
 
+/* NAV */
 
 /* MESSAGE AREA */
-.message_contact_area{
+.chat{
   width: 70%;
   background-color: #fff;
 }
@@ -209,82 +218,78 @@ nav .contact_list ul{
 /* MESSAGE AREA SECTIONs */
 
 /* HEADER CONTACT AREA */
-.message_contact_header{
+.chat_header{
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 50px;
   background-color: #eaeaea;
 }
-.message_contact_header_left{
+/* LEFT */
+.chat_header_left{
   display: flex;
 }
-.message_contact_header_left_info{
+.chat_header_left_info{
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-.message_contact_header_left_info h4{
+.chat_header_left_info h4{
   font-weight: 500;
 }
 
-.message_contact_header_left_info p{
+.chat_header_left_info p{
   font-size: 10px;
   color: #888;
 }
-.contact_panel_account ul li{
+/* RIGHT */
+.chat_header_right ul li{
   padding: 0 10px;
 }
 
-.contact_panel_account ul li a i{
+.chat_header_right ul li a i{
   font-size: 16px;
   color: #b1b1b1;
 
 }
-
+/* /HEADER CONTACT AREA */
 
 /* MAIN CONTACT AREA */
-.message_contact_main{
+.chat_main{
   height: calc(100% - 100px);
   padding: 30px;
   background-image: url(../img/mine.jpg);
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 /* TEMPLATE MESSAGE CONTACT LI */
-.text_screen{
+.chat_screen{
   list-style: none;
 }
-li.input_text{
+.chat_screen .message_row{
   display: flex;
+  justify-content: flex-start;
   margin: 5px 0;
 }
-.input_text .cloud_text{
+.chat_screen .message_text{
   max-width: 300px;
   padding: 15px;
   border-radius: 5px;
   word-break: break-all;
-}
-.input_text .cloud_text p{
-  /* word-break: break-all; */
-}
-/* green */
-li.input_text.green{
-    justify-content: flex-end;
-}
-li.input_text.green .cloud_text{
-  background-color: #d5f9ba;
-}
-/* white */
-li.template_input_text.white{
-  justify-content: flex-start;
-}
-li.template_input_text.white .cloud_text{
   background-color: #fff;
 }
 
-/* TEXT INPUT CONTACT AREA */
-.message_contact_input_text{
+/* SENT MESSAGE */
+.chat_screen .message_row.sent{
+    justify-content: flex-end;
+}
+.chat_screen .message_row.sent .message_text{
+  background-color: #d5f9ba;
+}
+
+
+/* TEXT INPUT  AREA */
+.chat_footer{
   display: flex;
   align-items: center;
   height: 50px;
@@ -292,7 +297,7 @@ li.template_input_text.white .cloud_text{
   background-color: #f3eeea;
   color: #6b7376;
 }
-.message_contact_input_text input{
+.chat_footer input{
   width: 80%;
   height: 35px;
   padding: 5px;
@@ -301,11 +306,11 @@ li.template_input_text.white .cloud_text{
   border-radius: 5px;
   font-size: 10px;
 }
-.emoticon_container{
+.emoticons{
   width: 10%;
   text-align: center;
 }
-.emoticon_container i{
+.emoticons i{
   font-size: 20px;
 }
 .send_button_container{
@@ -318,17 +323,19 @@ li.template_input_text.white .cloud_text{
 #send_button i{
   font-size: 20px;
 }
+/* /TEXT INPUT  AREA  */
+
 
 /* FOCUS INPUT AREA */
 .send_button_container .fa-paper-plane{
   display: none;
 }
-.message_contact_input_text input:focus ~ .send_button_container .fa-paper-plane{
+.chat_footer input:focus ~ .send_button_container .fa-paper-plane{
   display: block;
 }
 .send_button_container .fa-microphone{
   display: block;
 }
-.message_contact_input_text input:focus ~ .send_button_container .fa-microphone{
+.chat_footer input:focus ~ .send_button_container .fa-microphone{
   display: none;
 }

@@ -17,7 +17,8 @@
 
       <!-- nav bar di sinistra -->
       <nav class="aside_nav">
-        <div class="header_aside_nav">
+        <!-- header aside nav -->
+        <div class="header">
           <div class="img_account">
             <img class="avatar" src="img/avatar_io.jpg" alt="foto profilo">
           </div>
@@ -29,151 +30,58 @@
             </ul>
           </div>
         </div>
+        <!-- /header aside nav -->
+        <!-- notifications -->
         <div class="notifications">
-          <div class="img_notifications_container">
+          <div class="img_notifications">
             <i class="fas fa-bell-slash"></i>
           </div>
-          <div class="text_notifications_container">
+          <div class="text_notifications">
             <h4>Ricevi notifiche di nuovi messaggi</h4>
             <p>Attiva notifiche desktop</p>
           </div>
         </div>
+        <!-- /notifications -->
+        <!-- search bar -->
         <div class="search_bar">
           <span class="search_icon"><i class="fas fa-search"></i></span>
           <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
         </div>
+        <!-- /search bar -->
+        <!-- contact list -->
         <div class="contact_list">
           <ul>
-            <li>
-              <div class="template_slide active">
-                <div class="template_slide_img_wrapper">
-                  <img class="avatar" src="img/avatar_1.jpg" alt="">
-                </div>
-                <div class="template_slide_info_wrapper">
-                  <div class="template_slide_info_text_wrapper_top">
-                    <h4>Michele</h4>
-                    <span class="last_typed_time">11:30</span>
-                  </div>
-                  <p>Non poteva essere altrimenti</p>
-                </div>
+            <li class="contact">
+              <div class="contact_img">
+                <img class="avatar" src="img\avatar_1.jpg" alt="Michele">
               </div>
-            </li>
-            <li>
-              <div class="template_slide">
-                <div class="template_slide_img_wrapper">
-                  <img class="avatar" src="img/avatar_2.jpg" alt="">
+              <div class="contact_info">
+                <div class="contact_info_top">
+                  <h4 class="contact_name">Michele</h4>
+                  <span class="last_typed_time">11.30</span>
                 </div>
-                <div class="template_slide_info_wrapper">
-                  <div class="template_slide_info_text_wrapper_top">
-                    <h4>Fabio</h4>
-                    <span class="last_typed_time">11:30</span>
-                  </div>
-                  <p>Non poteva essere altrimenti</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="template_slide">
-                <div class="template_slide_img_wrapper">
-                  <img class="avatar" src="img/avatar_3.jpg" alt="">
-                </div>
-                <div class="template_slide_info_wrapper">
-                  <div class="template_slide_info_text_wrapper_top">
-                    <h4>Samuele</h4>
-                    <span class="last_typed_time">11:30</span>
-                  </div>
-                  <p>Non poteva essere altrimenti</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="template_slide">
-                <div class="template_slide_img_wrapper">
-                  <img class="avatar" src="img/avatar_4.jpg" alt="">
-                </div>
-                <div class="template_slide_info_wrapper">
-                  <div class="template_slide_info_text_wrapper_top">
-                    <h4>Alessandro B.</h4>
-                    <span class="last_typed_time">11:30</span>
-                  </div>
-                  <p>Non poteva essere altrimenti</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="template_slide">
-                <div class="template_slide_img_wrapper">
-                  <img class="avatar" src="img/avatar_5.jpg" alt="">
-                </div>
-                <div class="template_slide_info_wrapper">
-                  <div class="template_slide_info_text_wrapper_top">
-                    <h4>Alessandro L.</h4>
-                    <span class="last_typed_time">11:30</span>
-                  </div>
-                  <p>Non poteva essere altrimenti</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="template_slide">
-                <div class="template_slide_img_wrapper">
-                  <img class="avatar" src="img/avatar_6.jpg" alt="">
-                </div>
-                <div class="template_slide_info_wrapper">
-                  <div class="template_slide_info_text_wrapper_top">
-                    <h4>Claudia</h4>
-                    <span class="last_typed_time">11:30</span>
-                  </div>
-                  <p>Non poteva essere altrimenti</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="template_slide">
-                <div class="template_slide_img_wrapper">
-                  <img class="avatar" src="img/avatar_7.jpg" alt="">
-                </div>
-                <div class="template_slide_info_wrapper">
-                  <div class="template_slide_info_text_wrapper_top">
-                    <h4>Davide</h4>
-                    <span class="last_typed_time">11:30</span>
-                  </div>
-                  <p>Non poteva essere altrimenti</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="template_slide">
-                <div class="template_slide_img_wrapper">
-                  <img class="avatar" src="img/avatar_8.jpg" alt="">
-                </div>
-                <div class="template_slide_info_wrapper">
-                  <div class="template_slide_info_text_wrapper_top">
-                    <h4>Federico</h4>
-                    <span class="last_typed_time">11:30</span>
-                  </div>
-                  <p>Non poteva essere altrimenti</p>
-                </div>
+                <p class="last_typed_message">Allora per domani ci siamo tutti!</p>
               </div>
             </li>
           </ul>
         </div>
+        <!-- /contact list -->
       </nav>
       <!-- /nav bar di sinistra -->
 
       <!-- sezione di destra dove inserire e visualizzare testo -->
-      <section class="message_contact_area">
-        <div class="message_contact_header">
-          <div class="message_contact_header_left">
+      <section class="chat">
+        <div class="chat_header">
+          <div class="chat_header_left">
             <div class="img_account">
               <img class="avatar" src="img/avatar_1.jpg" alt="foto profilo contatto">
             </div>
-            <div class="message_contact_header_left_info">
+            <div class="chat_header_left_info">
               <h4>Michele</h4>
               <p>Ultimo accesso oggi alle 11.30</p>
             </div>
           </div>
-          <div class="contact_panel_account">
+          <div class="chat_header_right">
             <ul class="list-inline">
               <li><a href="#"><i class="fas fa-search"></i></a></li>
               <li><a href="#"><i class="fas fa-paperclip"></i></a></li>
@@ -181,17 +89,17 @@
             </ul>
           </div>
         </div>
-        <div class="message_contact_main">
-          <ul class="text_screen">
-            <li class="input_text green">
-              <div class="cloud_text">
-                <p>lorem</p>
+        <div class="chat_main">
+          <ul class="chat_screen">
+            <li class="message_row">
+              <div class="message_text">
+                <p>Ciao allora come e' andata?</p>
               </div>
             </li>
           </ul>
         </div>
-        <div class="message_contact_input_text">
-          <div class="emoticon_container"><i class="far fa-smile"></i></div>
+        <div class="chat_footer">
+          <div class="emoticons"><i class="far fa-smile"></i></div>
           <input id="text_input" type="text" name="" value="" placeholder="Scrivi un messaggio">
           <div class="send_button_container">
             <a href="#" id="send_button">
@@ -206,28 +114,34 @@
     </div>
     <!-- /container di 80% -->
 
-    <!-- template contatti -->
-    <div class="template_slide d_none">
-      <div class="template_slide_img_wrapper">
-        <img class="avatar" src="" alt="avatar">
-      </div>
-      <div class="template_slide_info_wrapper">
-        <div class="template_slide_info_text_wrapper_top">
-          <h4></h4>
-          <span class="last_typed_time"></span>
-        </div>
-        <p></p>
-      </div>
-    </div>
-    <!-- /template contatti -->
+    <!-- TEMPLATES -->
+    <div class="template">
 
-    <!-- template input text -->
-    <li class="template input_text d_none">
-      <div class="cloud_text">
-        <p></p>
-      </div>
-    </li>
-    <!-- /template input text -->
+      <!-- CONTATTO -->
+      <li class="contact">
+        <div class="contact_img">
+          <img class="avatar" src="" alt="avatar">
+        </div>
+        <div class="contact_info">
+          <div class="contact_info_top">
+            <h4 class="contact_name"></h4>
+            <span class="last_typed_time"></span>
+          </div>
+          <p class="last_typed_message"></p>
+        </div>
+      </li>
+      <!-- /CONTATTO -->
+
+      <!-- MESSAGGIO -->
+      <li class="message_row">
+        <div class="message_text">
+          <p></p>
+        </div>
+      </li>
+      <!-- /MESSAGGIO -->
+
+    </div>
+    <!-- /TEMPLATES -->
 
 
     <script src="js/script.js" charset="utf-8"></script>
