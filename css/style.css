@@ -11,24 +11,6 @@ body{
   background-color: #009688;
 }
 
-/* default */
-a{
-  text-decoration: none;
-}
-
-.container{
-  display: flex;
-  flex-wrap: nowrap;
-  width: 80%;
-  min-width: 992px;
-  height: calc(100vh - 40px);
-  margin: 20px auto;
-}
-
-.list-inline{
- display: flex;
- list-style: none;
-}
 
 /* TEMPLATEs */
 .template{
@@ -337,5 +319,29 @@ p.last_typed_message{
   display: block;
 }
 .chat_footer input:focus ~ .send_button_container .fa-microphone{
+  display: none;
+}
+
+
+/* default */
+a{
+  text-decoration: none;
+}
+
+.container{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 80%;
+  min-width: 992px;
+  height: calc(100vh - 40px);
+  margin: 20px auto;
+}
+
+.list-inline{
+ display: flex;
+ list-style: none;
+}
+
+.d_none{
   display: none;
 }

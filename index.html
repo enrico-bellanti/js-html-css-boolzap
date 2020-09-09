@@ -45,7 +45,7 @@
         <!-- search bar -->
         <div class="search_bar">
           <span class="search_icon"><i class="fas fa-search"></i></span>
-          <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+          <input id="input_search" type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
         </div>
         <!-- /search bar -->
         <!-- contact list -->
@@ -58,6 +58,32 @@
               <div class="contact_info">
                 <div class="contact_info_top">
                   <h4 class="contact_name">Michele</h4>
+                  <span class="last_typed_time">11.30</span>
+                </div>
+                <p class="last_typed_message">Allora per domani ci siamo tutti!</p>
+              </div>
+            </li>
+          <ul>
+            <li class="contact">
+              <div class="contact_img">
+                <img class="avatar" src="img\avatar_1.jpg" alt="Michele">
+              </div>
+              <div class="contact_info">
+                <div class="contact_info_top">
+                  <h4 class="contact_name">Andrea</h4>
+                  <span class="last_typed_time">11.30</span>
+                </div>
+                <p class="last_typed_message">Allora per domani ci siamo tutti!</p>
+              </div>
+            </li>
+          <ul>
+            <li class="contact">
+              <div class="contact_img">
+                <img class="avatar" src="img\avatar_1.jpg" alt="Michele">
+              </div>
+              <div class="contact_info">
+                <div class="contact_info_top">
+                  <h4 class="contact_name">Alessandro</h4>
                   <span class="last_typed_time">11.30</span>
                 </div>
                 <p class="last_typed_message">Allora per domani ci siamo tutti!</p>
@@ -91,7 +117,7 @@
         </div>
         <div class="chat_main">
           <ul class="chat_screen">
-            <li class="message_row">
+            <li class="message_row sent">
               <div class="message_text">
                 <p>Ciao allora come e' andata?</p>
               </div>
@@ -144,6 +170,7 @@
     <!-- /TEMPLATES -->
 
 
+    <script src="js/test.js" charset="utf-8"></script>
     <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
