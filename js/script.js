@@ -8,14 +8,14 @@ $(document).ready(function() {
 
   $( "#send_button" ).click(function() {
     sendMessage();
-    setTimeout(getReply("ok!"), 3000);
+    setTimeout(function(){getReply("ok!")}, 3000);
 
   });
 
   $("#text_input").keydown(function(event){
     if (event.which == 13) {
       sendMessage();
-      setTimeout(getReply("ok!"), 3000);
+      setTimeout(function(){getReply("ok!")}, 3000);
     }
   });
 

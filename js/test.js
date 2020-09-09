@@ -14,7 +14,7 @@ $(document).ready(function() {
     // salva il valore dell'input in una variabile
     var keyWord = $("#input_search").val();
 
-    // per ogni valore nei contact name controllo se combacia 
+    // per ogni valore nei contact name controllo se combacia
     // con la keyword inserita se no applico display none
     $('.contact_name').each(function () {
 
@@ -28,7 +28,7 @@ $(document).ready(function() {
       }
 
 
-  });
+    });
 
 
   });
