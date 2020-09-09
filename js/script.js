@@ -8,16 +8,41 @@ $(document).ready(function() {
 
   $( "#send_button" ).click(function() {
     sendMessage();
-    setTimeout(function(){getReply("ok!")}, 3000);
+    setTimeout(function(){getReply("ok!")}, 2000);
 
   });
 
   $("#text_input").keydown(function(event){
     if (event.which == 13) {
       sendMessage();
-      setTimeout(function(){getReply("ok!")}, 3000);
+      setTimeout(function(){getReply("ok!")}, 2000);
     }
   });
+
+  // nel momento in cui si digita qualcosa nella casella riscerca parte una funzione
+  $("#input_search").keyup(function(event){
+    // salva il valore dell'input in una variabile
+    var keyWord = $("#input_search").val();
+
+    // per ogni valore nei contact name controllo se combacia
+    // con la keyword inserita se no applico display none
+    $('.contact_name').each(function () {
+
+      var contact = $(this).text();
+      contact = contact.toLowerCase();
+      var isInArray = contact.includes(keyWord);
+      if (isInArray == false) {
+        $(this).parents("li").addClass("d_none");
+      } else {
+       $(this).parents("li").removeClass("d_none");
+      }
+
+    });
+    // fine each
+
+
+  });
+  // /keydown
 
 
 // end document ready

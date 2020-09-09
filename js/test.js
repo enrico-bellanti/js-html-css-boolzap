@@ -19,14 +19,12 @@ $(document).ready(function() {
     $('.contact_name').each(function () {
 
       var contact = $(this).text();
-      console.log("questo contatto e' " + contact + " nell'array?");
+      contact = contact.toLowerCase();
       var isInArray = contact.includes(keyWord);
-      console.log(isInArray);
       if (isInArray == false) {
-        var j = $(this).parents("li").addClass("d_none");
-        console.log(j);
+        $(this).parents("li").addClass("d_none");
       } else {
-        var j = $(this).parents("li").removeClass("d_none");
+       $(this).parents("li").removeClass("d_none");
       }
 
 
