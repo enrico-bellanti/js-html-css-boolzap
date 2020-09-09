@@ -10,7 +10,7 @@
 $(document).ready(function() {
 
   // nel momento in cui si digita qualcosa nella casella riscerca parte una funzione
-  $("#input_search").keypress(function(event){
+  $("#input_search").keyup(function(event){
     // salva il valore dell'input in una variabile
     var keyWord = $("#input_search").val();
 
@@ -25,6 +25,8 @@ $(document).ready(function() {
       if (isInArray == false) {
         var j = $(this).parents("li").addClass("d_none");
         console.log(j);
+      } else {
+        var j = $(this).parents("li").removeClass("d_none");
       }
 
 
