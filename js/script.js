@@ -7,15 +7,23 @@
 $(document).ready(function() {
 
   $( "#send_button" ).click(function() {
-    sendMessage();
-    setTimeout(function(){getReply("ok!")}, 2000);
-
+    var textMessage = $("#text_input").val();
+    // controllo se text contiene testo
+    if (textMessage != "") {
+    sendMessage(textMessage);
+    setTimeout(function(){getReply()}, 2000);
+    }
   });
 
   $("#text_input").keydown(function(event){
     if (event.which == 13) {
-      sendMessage();
-      setTimeout(function(){getReply("ok!")}, 2000);
+      var textMessage = $("#text_input").val();
+      // controllo se text contiene testo
+      if (textMessage != "") {
+      sendMessage(textMessage);
+      setTimeout(function(){getReply()}, 2000);
+      }
+
     }
   });
 
@@ -23,6 +31,7 @@ $(document).ready(function() {
   $("#input_search").keyup(function(event){
     // salva il valore dell'input in una variabile
     var keyWord = $("#input_search").val();
+    keyWord = keyWord.toLowerCase();
 
     // per ogni valore nei contact name controllo se combacia
     // con la keyword inserita se no applico display none
@@ -32,17 +41,17 @@ $(document).ready(function() {
       contact = contact.toLowerCase();
       var isInArray = contact.includes(keyWord);
       if (isInArray == false) {
-        $(this).parents("li").addClass("d_none");
+        $(this).parents(".contact").addClass("d_none");
       } else {
-       $(this).parents("li").removeClass("d_none");
+       $(this).parents(".contact").removeClass("d_none");
       }
 
     });
-    // fine each
-
+    // /fine each
 
   });
   // /keydown
+
 
 
 // end document ready
@@ -52,6 +61,9 @@ $(document).ready(function() {
 
 // creo una funzione per inviare una risposta all'utente in cui dice "ok!"
 function getReply(text) {
+  if (text == null) {
+    text = "ok!";
+  }
   // fai una copia del template template_input_text
   var template = $(".template .message_row").clone();
   // inserisci il testo p del template
@@ -63,11 +75,8 @@ function getReply(text) {
 // creo una funzione cheregistra il valore su una variabile
 // azzera la chat input
 // e inserisce il valore inserito nello chat_screen dell'html
-function sendMessage() {
-  var textMessage = $("#text_input").val();
-  // controllo se text contiene testo
-  if (textMessage != "") {
-    $("#text_input").val("");
+function sendMessage(textMessage) {
+
     // fai una copia del template template_input_text
     var template = $(".template .message_row").clone();
     // inserisci il testo p del template
@@ -76,5 +85,6 @@ function sendMessage() {
     template.addClass("sent");
     // appendi il nuovo oggetto al li nella text area nell'html
     $("ul.chat_screen").append(template);
-  }
+    $("#text_input").val("");
+
 }

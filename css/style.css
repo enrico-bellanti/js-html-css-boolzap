@@ -30,6 +30,9 @@ body{
   background-color: #fff;
   cursor: pointer;
 }
+.contact.active{
+  background-color: #e9ebeb;
+}
 .contact_info_top{
   display: flex;
   justify-content: space-between;
@@ -238,10 +241,14 @@ p.last_typed_message{
 
 /* MAIN CONTACT AREA */
 .chat_main{
+  display: none;
   height: calc(100% - 100px);
   padding: 30px;
   background-image: url(../img/mine.jpg);
   overflow-y: scroll;
+}
+.chat_main.active{
+  display: block;
 }
 
 /* TEMPLATE MESSAGE CONTACT LI */
@@ -262,12 +269,13 @@ p.last_typed_message{
 }
 
 /* SENT MESSAGE */
-.chat_screen .message_row.sent{
+.message_row.sent{
     justify-content: flex-end;
 }
-.chat_screen .message_row.sent .message_text{
+.message_row.sent .message_text{
   background-color: #d5f9ba;
 }
+
 
 
 /* TEXT INPUT  AREA */

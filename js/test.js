@@ -9,30 +9,19 @@
 
 $(document).ready(function() {
 
-  // nel momento in cui si digita qualcosa nella casella riscerca parte una funzione
-  $("#input_search").keyup(function(event){
-    // salva il valore dell'input in una variabile
-    var keyWord = $("#input_search").val();
-
-    // per ogni valore nei contact name controllo se combacia
-    // con la keyword inserita se no applico display none
-    $('.contact_name').each(function () {
-
-      var contact = $(this).text();
-      contact = contact.toLowerCase();
-      var isInArray = contact.includes(keyWord);
-      if (isInArray == false) {
-        $(this).parents("li").addClass("d_none");
-      } else {
-       $(this).parents("li").removeClass("d_none");
-      }
-
-
-    });
-
-
+  $(".contact").click(function(){
+    $(".contact").removeClass("active");
+    $(".chat_main").removeClass("active");
+    $(this).addClass("active");
+    var contactAttr = $(this).attr("data-contact");
+    $(".chat_main[data-chat="+contactAttr+"]").addClass("active");
+    var contactImg = $(this).find("img").clone();
+    console.log(contactImg);
+    var contactName = $(this).find(".contact_name").text();
+    console.log(contactName);
+    $(".chat_header_left").find(".img_account").html(contactImg);
+    $(".chat_header_left").find(".chat_header_left_info h4").html(contactName);
   });
-
 
 // end document ready
 });
