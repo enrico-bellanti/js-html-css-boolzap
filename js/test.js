@@ -9,10 +9,9 @@
 
 $(document).ready(function() {
 
-  $(".message_options i").click(function(){
-    $(".message_options_list").show();
 
-  });
+
+
 
 // end document ready
 });

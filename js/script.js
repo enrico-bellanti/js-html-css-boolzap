@@ -69,7 +69,7 @@ $(document).ready(function() {
     // aggiungo la classe active al contatto cliccato
     $(this).addClass("active");
     // salvo il valore data_chat in variabile
-    var contactAttr = $(this).attr("data-contact"); //2
+    var contactAttr = $(this).attr("data-contact");
     // applico la classe active alla chat screen con lo stesso valore
     $(".chat_screen[data-chat="+contactAttr+"]").addClass("active");
     // creo una copia dell'immagine contatto
@@ -79,6 +79,16 @@ $(document).ready(function() {
     // inserisco questi valori nell'header della chat
     $(".chat_header_left").find(".img_account").html(contactImg);
     $(".chat_header_left").find(".chat_header_left_info h4").html(contactName);
+  });
+
+  // MENU TENDINA SUL TESTO CHAT message_options_list
+  // al click sulla freccetta fai comparire o scomparire il menu opzioni
+  $(document).on( "click", ".message_options i", function() {
+    $(this).next(".message_options_list").toggle();
+  });
+  // cliccando sulla voce "elimina messaggio" elimina l'intera riga di codice
+  $(document).on( "click", ".delete_message", function() {
+    $(this).parents(".message_row").remove();
   });
 
 
