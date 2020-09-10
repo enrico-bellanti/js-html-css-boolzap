@@ -241,19 +241,20 @@ p.last_typed_message{
 
 /* MAIN CONTACT AREA */
 .chat_main{
-  display: none;
   height: calc(100% - 100px);
   padding: 30px;
   background-image: url(../img/mine.jpg);
   overflow-y: scroll;
 }
-.chat_main.active{
-  display: block;
-}
+
 
 /* TEMPLATE MESSAGE CONTACT LI */
 .chat_screen{
+  display: none;
   list-style: none;
+}
+.chat_screen.active{
+  display: block;
 }
 .chat_screen .message_row{
   display: flex;

@@ -69,7 +69,7 @@ function getReply(text) {
   // inserisci il testo p del template
   template.find("p").text(text);
   // appendi il nuovo oggetto al li nella text area nell'html
-  $("ul.chat_screen").append(template);
+  $("ul.chat_screen.active").append(template);
 }
 
 // creo una funzione cheregistra il valore su una variabile
@@ -84,7 +84,7 @@ function sendMessage(textMessage) {
     // inserisci la classe sent
     template.addClass("sent");
     // appendi il nuovo oggetto al li nella text area nell'html
-    $("ul.chat_screen").append(template);
+    $("ul.chat_screen.active").append(template);
     $("#text_input").val("");
 
 }
