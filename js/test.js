@@ -9,23 +9,9 @@
 
 $(document).ready(function() {
 
-  $(".contact").click(function(){
-    // rimuovo le classi active sia ai contatti che alle chat screen
-    $(".contact").removeClass("active");
-    $(".chat_screen").removeClass("active");
-    // aggiungo la classe active al contatto cliccato
-    $(this).addClass("active");
-    // salvo il valore data_chat in variabile
-    var contactAttr = $(this).attr("data-contact");
-    // applico la classe active alla chat screen con lo stesso valore
-    $(".chat_screen[data-chat="+contactAttr+"]").addClass("active");
-    // creo una copia dell'immagine contatto
-    var contactImg = $(this).find("img").clone();
-    // mi copio il nome del contatto
-    var contactName = $(this).find(".contact_name").text();
-    // inserisco questi valori nell'header della chat
-    $(".chat_header_left").find(".img_account").html(contactImg);
-    $(".chat_header_left").find(".chat_header_left_info h4").html(contactName);
+  $(".message_options i").click(function(){
+    $(".message_options_list").show();
+
   });
 
 // end document ready
