@@ -1,10 +1,5 @@
-// Milestone 1
-// Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi)
-//  e dall’interlocutore (bianco) assegnando due classi CSS diverse
-// Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e cliccando
-//  invia il testo viene aggiunto al thread sopra, come messaggio verde
-
 $(document).ready(function() {
+
   // al click sul bottone invia messaggio
   $( "#send_button" ).click(function() {
     // salvo il valore del text input
@@ -15,7 +10,7 @@ $(document).ready(function() {
     // controllo se text contiene testo
     if (textMessage != "") {
     sendMessage(textMessage, contactAttr);
-    setTimeout(function(){sendReply(null, contactAttr)}, 2000);
+    setTimeout(function(){getMessage(null, contactAttr)}, 2000);
     }
   });
   // premendo invio manda il messaggio
@@ -28,7 +23,7 @@ $(document).ready(function() {
       // controllo se text contiene testo
       if (textMessage != "") {
         sendMessage(textMessage, contactAttr);
-        setTimeout(function(){sendReply(null, contactAttr)}, 2000);
+        setTimeout(function(){getMessage(null, contactAttr)}, 2000);
       }
 
     }
@@ -53,13 +48,11 @@ $(document).ready(function() {
       } else {
        $(this).parents(".contact").removeClass("d_none");
       }
-
     });
     // /fine each
-    // fine CASELLA RICERCA
-
   });
   // /keyup
+  // fine CASELLA RICERCA
 
   // Cliccando su un contatto mostra la chat associata
   $(".contact").click(function(){
@@ -92,14 +85,14 @@ $(document).ready(function() {
   });
 
 
-
 // end document ready
 });
+
 
 // my functions
 
 // creo una funzione per inviare una risposta all'utente in cui dice "ok!"
-function sendReply(text, value) {
+function getMessage(text, value) {
   // controllo se l'argomento e' null manda un testo di default
   if (text == null) {
     text = "ok!";
@@ -108,6 +101,8 @@ function sendReply(text, value) {
   var template = $(".template .message_row").clone();
   // inserisci il testo p del template
   template.find("p").text(text);
+  // inserisci l'orario
+  template.find(".message_time").text(clock());
   // appendi il nuovo oggetto al li nella text area nell'html
   $(".chat_screen[data-chat="+value+"]").append(template);
 }
@@ -120,10 +115,23 @@ function sendMessage(textMessage, value) {
   var template = $(".template .message_row").clone();
   // inserisci il testo p del template
   template.find("p").text(textMessage);
+  // inserisci l'orario
+  template.find(".message_time").text(clock());
   // inserisci la classe sent
   template.addClass("sent");
   // appendi il nuovo oggetto al li nella text area nell'html
   $(".chat_screen[data-chat="+value+"]").append(template);
   $("#text_input").val("");
+}
 
+// funzione per ottenere l'orario
+function clock() {
+  var d = new Date();
+  var h = d.getHours();
+  var m = d.getMinutes();
+  if (m < 10){
+    m = "0" + m;
+  }
+  var time = h + ":" + m;
+  return time;
 }

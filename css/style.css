@@ -281,8 +281,10 @@ a{
   background-color: #fff;
 }
 .message_text{
-  width: 80%;
-  word-break: break-all;
+  word-break: break-word;
+}
+.message_text p{
+
 }
 .message_options{
   position: relative;
