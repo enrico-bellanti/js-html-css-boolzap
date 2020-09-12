@@ -4,7 +4,6 @@ $(document).ready(function() {
   $( "#send_button" ).click(function() {
     // ottieni l'index del contatto active
     var index = $(".contact.active").index();
-    console.log("indice " + index);
     sendMessage(null, index);
     setTimeout(function(){textHeaderChat("Sta scrivendo...")}, 2000);
     setTimeout(function(){sendMessage("ok", index)}, 5000);
@@ -15,7 +14,6 @@ $(document).ready(function() {
     if (event.which == 13) {
       // ottieni l'index del contatto active
       var index = $(".contact.active").index();
-      console.log("indice " + index);
       sendMessage(null, index);
       setTimeout(function(){textHeaderChat("Sta scrivendo...")}, 2000);
       setTimeout(function(){sendMessage("ok", index)}, 5000);
@@ -106,7 +104,6 @@ function sendMessage(text, indexContact) {
   if (text == null) {
     // salvo il contanuto della casella input
     var textMessage = $("#text_input").val();
-    console.log("messaggio scritto " + textMessage);
     // inserisci la classe sent
     template.addClass("sent");
   } else {
@@ -123,7 +120,6 @@ function sendMessage(text, indexContact) {
   // salvo in una variabile la selezione della chat corrispondete
   // var activeChat = $(".chat_screen:nth-child("+indexContact+")");
   var activeChat = $(".chat_screen:nth-child("+(indexContact+1)+")");
-  console.log("indice chat active " + activeChat.index());
   // vado ad appendere il templae nella chat con l'index corrispondente
   activeChat.append(template);
   // inserisci l'orario nel contatto corrispondente
@@ -133,12 +129,12 @@ function sendMessage(text, indexContact) {
   // se la chat con l'index salvato inzialmente e' ancora active
   // allora scrivi nell'header l'orario dell'ultimo MESSAGGIO
   var isActive = $(".chat_screen:nth-child("+(indexContact + 1)+")").hasClass("active");
-  console.log("chat_screen is still active? " + isActive);
   if (isActive) {
     $(".chat_header_left_info .last_access").text(time);
   }
   // resetto l'imput chat
   $("#text_input").val("");
+  updateScroll();
 }
 
 
@@ -158,4 +154,11 @@ function clock() {
 // funzione che scrive "Sta scrivendo..." nell'header della chat
 function textHeaderChat(text) {
   $(".chat_header_left_info p").text(text);
+}
+
+// funzione per scrollare la pagina quando l'utente aggiunge testo
+function updateScroll(){
+    var element = $(".chat_main");
+    element.scrollTop(element[0].scrollHeight);
+
 }
