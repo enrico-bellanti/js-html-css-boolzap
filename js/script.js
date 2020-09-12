@@ -51,6 +51,8 @@ $(document).ready(function() {
   $(".contact").click(
   function(){
     $(this).find(".counter_message_unread").removeClass("active");
+    // riporta a 1 unita il valore del counter
+    $(this).find(".counter_message_unread").text("1");
     // seleziono l'indce del contatto cliccato
     var indexContact = $(this).index();
     // rimuovo sia a tutti i contatti che a tutte le screen chat la classe active
@@ -118,8 +120,8 @@ function sendMessage(text, indexContact) {
   } else {
     // inserisco nella variabile textMessage il testo del mittente
     var textMessage = text;
-    // var lastAccess = "Ultimo accesso oggi alle <span class="last_access">11.30</span>";
-    $(".chat_header_left_info p").html("<p>Ultimo messaggio oggi alle <span class='last_access'>11.30</span></p>");
+    // rinserisci l'orario dell'ultimo messaggio una volta finito "Sta scrivendo"
+    $(".chat_header_left_info p").html("<p>Ultimo messaggio oggi alle <span class='last_access'></span></p>");
   }
 
   // inserisco il testo nel clone del template messaggio
@@ -141,7 +143,12 @@ function sendMessage(text, indexContact) {
   if (isActive) {
     $(".chat_header_left_info .last_access").text(time);
   } else {
-    $(".contact:nth-child("+(indexContact+1)+") .counter_message_unread").addClass("active");
+    var unreadCounter = $(".contact:nth-child("+(indexContact+1)+") .counter_message_unread");
+    unreadCounter.addClass("active");
+    // // aumentare il valore del contatore
+    // var valueCounter = parseInt(unreadCounter.text());
+    // console.log(valueCounter);
+    // unreadCounter.text(valueCounter++);
   }
   // resetto l'imput chat
   $("#text_input").val("");
@@ -164,7 +171,12 @@ function clock() {
 
 // funzione che scrive "Sta scrivendo..." nell'header della chat
 function isWriting(text, indexContact) {
-  $(".chat_header_left_info p").text(text);
+  // scrivi "sta scrivendo..", quando visualizzo la chat corrispondente
+  var isActive = $(".chat_screen:nth-child("+(indexContact + 1)+")").hasClass("active");
+  if (isActive) {
+    $(".chat_header_left_info p").text(text);
+  }
+  // scrivi sta scrivendo nel contatto della lista
   $(".contact:nth-child("+(indexContact+1)+") .last_typed_message").text(text);
 }
 
