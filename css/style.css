@@ -44,11 +44,6 @@ a{
   background-color: #e9ebeb;
 }
 
-.contact_info_top{
-  display: flex;
-  justify-content: space-between;
-}
-
 .contact_info {
   display: flex;
   flex-direction: column;
@@ -56,12 +51,37 @@ a{
   padding: 10px 10px;
   width: calc(100% - 50px);
 }
+
+.contact_row_top{
+  display: flex;
+  justify-content: space-between;
+}
+
 .contact_name{
   font-weight: 500;
 }
 .last_typed_time{
   font-size: 10px;
   color: #888;
+}
+
+.contact_row_bottom{
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+}
+.counter_message_unread{
+  display: none;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #06d755;
+  color: #fff;
+}
+.counter_message_unread.active{
+  display: block;
 }
 
 .last_typed_message{

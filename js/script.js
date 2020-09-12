@@ -50,7 +50,7 @@ $(document).ready(function() {
   //seleziona contatto ottieni chat corrispondente
   $(".contact").click(
   function(){
-
+    $(this).find(".counter_message_unread").removeClass("active");
     // seleziono l'indce del contatto cliccato
     var indexContact = $(this).index();
     // rimuovo sia a tutti i contatti che a tutte le screen chat la classe active
@@ -140,6 +140,8 @@ function sendMessage(text, indexContact) {
   var isActive = $(".chat_screen:nth-child("+(indexContact + 1)+")").hasClass("active");
   if (isActive) {
     $(".chat_header_left_info .last_access").text(time);
+  } else {
+    $(".contact:nth-child("+(indexContact+1)+") .counter_message_unread").addClass("active");
   }
   // resetto l'imput chat
   $("#text_input").val("");
