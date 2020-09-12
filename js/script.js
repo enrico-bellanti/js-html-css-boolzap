@@ -113,7 +113,7 @@ function sendMessage(text, indexContact) {
     // inserisco nella variabile textMessage il testo del mittente
     var textMessage = text;
     // var lastAccess = "Ultimo accesso oggi alle <span class="last_access">11.30</span>";
-    $(".chat_header_left_info p").html("<p>Ultimo accesso oggi alle <span class='last_access'>11.30</span></p>");
+    $(".chat_header_left_info p").html("<p>Ultimo messaggio oggi alle <span class='last_access'>11.30</span></p>");
   }
 
   // inserisco il testo nel clone del template messaggio
