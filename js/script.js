@@ -3,20 +3,21 @@ $(document).ready(function() {
   // al click sul bottone invia messaggio
   $( "#send_button" ).click(function() {
     // ottieni l'index del contatto active
-    var index = $(".contact.active").index();
-    sendMessage(null, index);
-    setTimeout(function(){textHeaderChat("Sta scrivendo...")}, 2000);
-    setTimeout(function(){sendMessage("ok", index)}, 5000);
-
+    var indexContactActive = $(".contact.active").index();
+    sendMessage(null, indexContactActive);
+    setTimeout(function(){isWriting("Sta scrivendo...",indexContactActive)}, 2000);
+    var cpuReply = getRandomReply();
+    setTimeout(function(){sendMessage(cpuReply, indexContactActive)}, 5000);
   });
   // premendo invio manda il messaggio
   $("#text_input").keydown(function(event){
     if (event.which == 13) {
       // ottieni l'index del contatto active
-      var index = $(".contact.active").index();
-      sendMessage(null, index);
-      setTimeout(function(){textHeaderChat("Sta scrivendo...")}, 2000);
-      setTimeout(function(){sendMessage("ok", index)}, 5000);
+      var indexContactActive = $(".contact.active").index();
+      sendMessage(null, indexContactActive);
+      setTimeout(function(){isWriting("Sta scrivendo...",indexContactActive)}, 2000);
+      var cpuReply = getRandomReply();
+      setTimeout(function(){sendMessage(cpuReply, indexContactActive)}, 5000);
     }
   });
 
@@ -49,6 +50,7 @@ $(document).ready(function() {
   //seleziona contatto ottieni chat corrispondente
   $(".contact").click(
   function(){
+
     // seleziono l'indce del contatto cliccato
     var indexContact = $(this).index();
     // rimuovo sia a tutti i contatti che a tutte le screen chat la classe active
@@ -74,6 +76,8 @@ $(document).ready(function() {
     // registra l'orario ultimo accesso dal contatto e copialo nell'header della chat
     var timeLastAccess = $(this).find(".last_typed_time").text();
     $(".chat_header_left .last_access").text(timeLastAccess);
+    // mostra la fine dello scroll
+    updateScroll();
   });
 
   // MENU TENDINA SUL TESTO CHAT message_options_list
@@ -152,13 +156,27 @@ function clock() {
 }
 
 // funzione che scrive "Sta scrivendo..." nell'header della chat
-function textHeaderChat(text) {
+function isWriting(text, indexContact) {
   $(".chat_header_left_info p").text(text);
+  $(".contact:nth-child("+(indexContact+1)+") .last_typed_message").text(text);
 }
 
 // funzione per scrollare la pagina quando l'utente aggiunge testo
 function updateScroll(){
     var element = $(".chat_main");
     element.scrollTop(element[0].scrollHeight);
+}
 
+// funzione per generare una risposta casuale
+function getRandomReply() {
+  var listReply = [
+    "Ciao come stai?",
+    "Ti stavo proprio pensando",
+    "Ehi eccomi ti stavo dicendo...",
+    "Ok!",
+    "Sono daccordo.",
+    "Va bene pensiamoci un attimo"
+  ];
+  var randomReply = Math.floor(Math.random() * listReply.length);
+  return listReply[randomReply];
 }
