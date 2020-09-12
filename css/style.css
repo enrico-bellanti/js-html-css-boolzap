@@ -401,6 +401,6 @@ a{
  list-style: none;
 }
 
-.d_none{
-  display: none;
+.display_on{
+  display: block;
 }

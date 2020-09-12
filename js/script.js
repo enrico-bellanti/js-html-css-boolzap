@@ -81,9 +81,13 @@ $(document).ready(function() {
   });
 
   // MENU TENDINA SUL TESTO CHAT message_options_list
-  // al click sulla freccetta fai comparire o scomparire il menu opzioni
+  // al click sulla freccetta fai comparireil menu opzioni
   $(document).on( "click", ".message_options i", function() {
-    $(this).next(".message_options_list").toggle();
+    $(this).next(".message_options_list").addClass("display_on");
+  });
+  // al mouseOut sulla freccetta fai scomparire il menu
+  $(document).on( "mouseout", ".message_row", function() {
+    $(this).find(".message_options_list").removeClass("display_on");
   });
   // cliccando sulla voce "elimina messaggio" elimina l'intera riga di codice
   $(document).on( "click", ".delete_message", function() {
