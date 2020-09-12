@@ -404,3 +404,6 @@ a{
 .display_on{
   display: block;
 }
+.d_none{
+  display: none;
+}

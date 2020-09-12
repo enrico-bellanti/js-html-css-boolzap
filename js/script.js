@@ -89,15 +89,11 @@ $(document).ready(function() {
   $(document).on( "mouseleave", ".message_container", function() {
     $(this).find(".message_options_list").removeClass("display_on");
   });
-
-  // $(".message_container").mouseleave(function(){
-  // $(this).find(".message_options_list").removeClass("display_on");
-  // });
-
   // cliccando sulla voce "elimina messaggio" elimina l'intera riga di codice
   $(document).on( "click", ".delete_message", function() {
     $(this).parents(".message_row").remove();
   });
+  // /MENU TENDINA
 
 
 // end document ready
