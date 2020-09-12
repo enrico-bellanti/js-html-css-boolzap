@@ -120,7 +120,7 @@ a{
 
 
 /* NOTIFICATION  */
-.aside_nav .notifications{
+.notifications{
   display: flex;
   height: 60px;
   background-color: #8edafc;
@@ -212,6 +212,13 @@ a{
 
 /* MESSAGE AREA SECTIONs */
 
+.chat_main{
+  height: calc(100% - 100px);
+  padding: 30px;
+  background-image: url(../img/mine.jpg);
+  overflow-y: scroll;
+}
+
 /* HEADER CONTACT AREA */
 .chat_header{
   display: flex;
@@ -248,14 +255,6 @@ a{
 
 }
 /* /HEADER CONTACT AREA */
-
-/* MAIN CONTACT AREA */
-.chat_main{
-  height: calc(100% - 100px);
-  padding: 30px;
-  background-image: url(../img/mine.jpg);
-  overflow-y: scroll;
-}
 
 
 /* TEMPLATE MESSAGE CONTACT LI */
@@ -317,6 +316,7 @@ a{
   white-space: nowrap;
   padding: 0 7px;
   border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.5);
   list-style: none;
   background-color: #fff;
   text-align: left;
@@ -358,7 +358,7 @@ a{
   background-color: #fff;
   border: 0;
   border-radius: 5px;
-  font-size: 10px;
+  font-size: 15px;
 }
 .emoticons{
   width: 10%;

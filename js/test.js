@@ -1,21 +1,37 @@
-//   Milestone 2
-// Risposta dall’interlocutore: ad ogni inserimento di un messaggio,
-//  l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
-
-// Ricerca utenti: scrivendo qualcosa nell’input a sinistra,
-//  vengono visualizzati solo i contatti il cui nome contiene le lettere inserite
-//  (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
 
 $(document).ready(function() {
-
-
-
-
-
-
-
-
+  // al digitare qualcosa nella barra input_search
 
 // end document ready
 });
+
+
+
+
+
+// METODO PER CLICCARE FUORI DAL MENU E FARLO SPARIRE (GIANNI)
+// $(document).on("click", ".wrap_general",
+//     function(){
+//       if (panel_delete_open && !click_angle_down) {
+//         $(this).find(".panel_delete").removeClass("delete_show");
+//         panel_delete_open = false;
+//       } else {
+//         click_angle_down = false;
+//       }
+//     });
+//
+//
+//
+//
+//
+// 3:12
+// panel_delete_open è una booleana che metto a true ogni volta che apro il menu cancella, cliccando sull'angle-down
+// 3:13
+// click_angle-down è una booleana che metto a true nell'evento click dell'angle-down
+// 3:13
+// wrap_general è il mio contenitore generale dove c'ho messo dentro tutto
+// 3:14
+// panel_delete è il mio menu cancella messaggi
+// 3:15
+// delete_show è la classe che fa il display: block per far apparire il menu

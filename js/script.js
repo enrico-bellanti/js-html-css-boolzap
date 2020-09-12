@@ -2,32 +2,26 @@ $(document).ready(function() {
 
   // al click sul bottone invia messaggio
   $( "#send_button" ).click(function() {
-    // salvo il valore del text input
-    var textMessage = $("#text_input").val();
-    // copia il valore della chat con classe active
-    var contactAttr = $(".chat_screen.active").attr("data-chat");
+    // ottieni l'index del contatto active
+    var index = $(".contact.active").index();
+    console.log("indice " + index);
+    sendMessage(null, index);
+    setTimeout(function(){textHeaderChat("Sta scrivendo...")}, 2000);
+    setTimeout(function(){sendMessage("ok", index)}, 5000);
 
-    // controllo se text contiene testo
-    if (textMessage != "") {
-    sendMessage(textMessage, contactAttr);
-    setTimeout(function(){getMessage(null, contactAttr)}, 2000);
-    }
   });
   // premendo invio manda il messaggio
   $("#text_input").keydown(function(event){
     if (event.which == 13) {
-      // salvo il valore del text input
-      var textMessage = $("#text_input").val();
-      // copia il valore della chat con classe active
-      var contactAttr = $(".chat_screen.active").attr("data-chat");
-      // controllo se text contiene testo
-      if (textMessage != "") {
-        sendMessage(textMessage, contactAttr);
-        setTimeout(function(){getMessage(null, contactAttr)}, 2000);
-      }
-
+      // ottieni l'index del contatto active
+      var index = $(".contact.active").index();
+      console.log("indice " + index);
+      sendMessage(null, index);
+      setTimeout(function(){textHeaderChat("Sta scrivendo...")}, 2000);
+      setTimeout(function(){sendMessage("ok", index)}, 5000);
     }
   });
+
 
   // CASELLA RICERCA
   // nel momento in cui si digita qualcosa nella casella riscerca parte una funzione
@@ -54,24 +48,34 @@ $(document).ready(function() {
   // /keyup
   // fine CASELLA RICERCA
 
-  // Cliccando su un contatto mostra la chat associata
-  $(".contact").click(function(){
-    // rimuovo le classi active sia ai contatti che alle chat screen
+  //seleziona contatto ottieni chat corrispondente
+  $(".contact").click(
+  function(){
+    // seleziono l'indce del contatto cliccato
+    var indexContact = $(this).index();
+    // rimuovo sia a tutti i contatti che a tutte le screen chat la classe active
     $(".contact").removeClass("active");
     $(".chat_screen").removeClass("active");
-    // aggiungo la classe active al contatto cliccato
+    // aumento di 1 unita l'indice perche' parte da 0
+    indexContact++;
+    // aggiungo al contatto cliccato la classe active
     $(this).addClass("active");
-    // salvo il valore data_chat in variabile
-    var contactAttr = $(this).attr("data-contact");
-    // applico la classe active alla chat screen con lo stesso valore
-    $(".chat_screen[data-chat="+contactAttr+"]").addClass("active");
-    // creo una copia dell'immagine contatto
-    var contactImg = $(this).find("img").clone();
+    // seleziono la chat screen corrispondente
+    var activeChat = $(".chat_screen:nth-child("+indexContact+")");
+    // aggiungo a questa chat screen la classe active
+    activeChat.addClass("active");
+
+    //logo + nome nella chat box
+    var contactImg = $(this).find("img");
+    var imgValue = contactImg.attr("src");
     // mi copio il nome del contatto
     var contactName = $(this).find(".contact_name").text();
     // inserisco questi valori nell'header della chat
-    $(".chat_header_left").find(".img_account").html(contactImg);
-    $(".chat_header_left").find(".chat_header_left_info h4").html(contactName);
+    $(".chat_header_left .img_account .avatar").attr("src", imgValue);
+    $(".chat_header_left .chat_header_left_info h4").text(contactName);
+    // registra l'orario ultimo accesso dal contatto e copialo nell'header della chat
+    var timeLastAccess = $(this).find(".last_typed_time").text();
+    $(".chat_header_left .last_access").text(timeLastAccess);
   });
 
   // MENU TENDINA SUL TESTO CHAT message_options_list
@@ -91,47 +95,67 @@ $(document).ready(function() {
 
 // my functions
 
-// creo una funzione per inviare una risposta all'utente in cui dice "ok!"
-function getMessage(text, value) {
-  // controllo se l'argomento e' null manda un testo di default
-  if (text == null) {
-    text = "ok!";
-  }
-  // fai una copia del template template_input_text
+// scrivo una funzione che invia messaggi sia in entrata che in uscita
+function sendMessage(text, indexContact) {
+  // fai una copia del template del messaggio
   var template = $(".template .message_row").clone();
-  // inserisci il testo p del template
-  template.find("p").text(text);
-  // inserisci l'orario
-  template.find(".message_time").text(clock());
-  // appendi il nuovo oggetto al li nella text area nell'html
-  $(".chat_screen[data-chat="+value+"]").append(template);
-}
+  // salva l'orario in una variabile
+  var time = clock();
 
-// creo una funzione cheregistra il valore su una variabile
-// azzera la chat input
-// e inserisce il valore inserito nello chat_screen dell'html
-function sendMessage(textMessage, value) {
-  // fai una copia del template template_input_text
-  var template = $(".template .message_row").clone();
-  // inserisci il testo p del template
+  // distinguo un messaggio in entrata da uno in uscita
+  if (text == null) {
+    // salvo il contanuto della casella input
+    var textMessage = $("#text_input").val();
+    console.log("messaggio scritto " + textMessage);
+    // inserisci la classe sent
+    template.addClass("sent");
+  } else {
+    // inserisco nella variabile textMessage il testo del mittente
+    var textMessage = text;
+    // var lastAccess = "Ultimo accesso oggi alle <span class="last_access">11.30</span>";
+    $(".chat_header_left_info p").html("<p>Ultimo accesso oggi alle <span class='last_access'>11.30</span></p>");
+  }
+
+  // inserisco il testo nel clone del template messaggio
   template.find("p").text(textMessage);
   // inserisci l'orario
-  template.find(".message_time").text(clock());
-  // inserisci la classe sent
-  template.addClass("sent");
-  // appendi il nuovo oggetto al li nella text area nell'html
-  $(".chat_screen[data-chat="+value+"]").append(template);
+  template.find(".message_time").text(time);
+  // salvo in una variabile la selezione della chat corrispondete
+  // var activeChat = $(".chat_screen:nth-child("+indexContact+")");
+  var activeChat = $(".chat_screen:nth-child("+(indexContact+1)+")");
+  console.log("indice chat active " + activeChat.index());
+  // vado ad appendere il templae nella chat con l'index corrispondente
+  activeChat.append(template);
+  // inserisci l'orario nel contatto corrispondente
+  $(".contact:nth-child("+(indexContact+1)+") .last_typed_time").text(time);
+  // inserisci testo messaggio nel contatto corrispondente
+  $(".contact:nth-child("+(indexContact+1)+") .last_typed_message").text(textMessage);
+  // se la chat con l'index salvato inzialmente e' ancora active
+  // allora scrivi nell'header l'orario dell'ultimo MESSAGGIO
+  var isActive = $(".chat_screen:nth-child("+(indexContact + 1)+")").hasClass("active");
+  console.log("chat_screen is still active? " + isActive);
+  if (isActive) {
+    $(".chat_header_left_info .last_access").text(time);
+  }
+  // resetto l'imput chat
   $("#text_input").val("");
 }
 
-// funzione per ottenere l'orario
+
 function clock() {
   var d = new Date();
   var h = d.getHours();
   var m = d.getMinutes();
   if (m < 10){
     m = "0" + m;
+  } else if (h < 10) {
+    h = "0" + h;
   }
   var time = h + ":" + m;
   return time;
+}
+
+// funzione che scrive "Sta scrivendo..." nell'header della chat
+function textHeaderChat(text) {
+  $(".chat_header_left_info p").text(text);
 }

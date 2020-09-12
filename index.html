@@ -51,93 +51,93 @@
         <!-- contact list -->
         <div class="contact_list">
           <ul>
-            <li class="contact active" data-contact = "1">
+            <li class="contact active">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_1.jpg" alt="Michele">
+                <img class="avatar" src="img\avatar_1.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_info_top">
                   <h4 class="contact_name">Michele</h4>
                   <span class="last_typed_time">11.30</span>
                 </div>
-                <p class="last_typed_message">Allora per domani ci siamo tutti!</p>
+                <p class="last_typed_message">Ciao come stai?</p>
               </div>
             </li>
-            <li class="contact" data-contact = "2">
+            <li class="contact">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_2.jpg" alt="Michele">
+                <img class="avatar" src="img\avatar_2.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_info_top">
                   <h4 class="contact_name">Fabio</h4>
-                  <span class="last_typed_time">11.30</span>
+                  <span class="last_typed_time">16.25</span>
                 </div>
-                <p class="last_typed_message">Allora per domani ci siamo tutti!</p>
+                <p class="last_typed_message">Mi e' piaciuto il concerto ieri!</p>
               </div>
             </li>
-            <li class="contact" data-contact = "3">
+            <li class="contact">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_3.jpg" alt="Michele">
+                <img class="avatar" src="img\avatar_3.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_info_top">
                   <h4 class="contact_name">Samuele</h4>
-                  <span class="last_typed_time">11.30</span>
+                  <span class="last_typed_time">09.05</span>
                 </div>
-                <p class="last_typed_message">Allora per domani ci siamo tutti!</p>
+                <p class="last_typed_message">Ti ho inviato il link che mi hai chiesto.</p>
               </div>
             </li>
-            <li class="contact" data-contact = "4">
+            <li class="contact">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_4.jpg" alt="Michele">
+                <img class="avatar" src="img\avatar_4.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_info_top">
                   <h4 class="contact_name">Alessandro B.</h4>
-                  <span class="last_typed_time">11.30</span>
+                  <span class="last_typed_time">00.30</span>
                 </div>
-                <p class="last_typed_message">Allora per domani ci siamo tutti!</p>
+                <p class="last_typed_message">Si domani ti chiamo e andiamo al mare :D</p>
               </div>
             </li>
-            <li class="contact" data-contact = "5">
+            <li class="contact">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_5.jpg" alt="Michele">
+                <img class="avatar" src="img\avatar_5.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_info_top">
                   <h4 class="contact_name">Alessandro L.</h4>
-                  <span class="last_typed_time">11.30</span>
+                  <span class="last_typed_time">13.15</span>
                 </div>
-                <p class="last_typed_message">Allora per domani ci siamo tutti!</p>
+                <p class="last_typed_message">Ho chiamato tutti e gliel'ho detto.</p>
               </div>
             </li>
-            <li class="contact" data-contact = "6">
+            <li class="contact">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_6.jpg" alt="Michele">
+                <img class="avatar" src="img\avatar_6.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_info_top">
                   <h4 class="contact_name">Claudia</h4>
-                  <span class="last_typed_time">11.30</span>
+                  <span class="last_typed_time">19.27</span>
                 </div>
-                <p class="last_typed_message">Allora per domani ci siamo tutti!</p>
+                <p class="last_typed_message">Salutami tua mamma. un abbraccio</p>
               </div>
             </li>
-            <li class="contact" data-contact = "7">
+            <li class="contact">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_7.jpg" alt="Michele">
+                <img class="avatar" src="img\avatar_7.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_info_top">
                   <h4 class="contact_name">Davide</h4>
-                  <span class="last_typed_time">11.30</span>
+                  <span class="last_typed_time">05.30</span>
                 </div>
-                <p class="last_typed_message">Allora per domani ci siamo tutti!</p>
+                <p class="last_typed_message">Sono rientrato ora Bro.</p>
               </div>
             </li>
-            <li class="contact" data-contact = "8">
+            <li class="contact">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_8.jpg" alt="Michele">
+                <img class="avatar" src="img\avatar_8.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_info_top">
@@ -162,7 +162,7 @@
             </div>
             <div class="chat_header_left_info">
               <h4>Michele</h4>
-              <p>Ultimo accesso oggi alle 11.30</p>
+              <p>Ultimo accesso oggi alle <span class="last_access">11.30</span></p>
             </div>
           </div>
           <div class="chat_header_right">
@@ -173,9 +173,157 @@
             </ul>
           </div>
         </div>
-        <!-- inizio schermo chat -->
+        <!-- parte centrale della chat -->
         <div class="chat_main">
-          <ul class="chat_screen active" data-chat = "1">
+          <!-- inizio schermo chat -->
+          <ul class="chat_screen active">
+            <li class="message_row">
+              <div class="message_container">
+                <div class="message_text">
+                  <p>Ciao come stai?</p>
+                </div>
+                <div class="message_info">
+                  <div class="message_options">
+                    <i class="fas fa-angle-down"></i>
+                    <ul class="message_options_list">
+                      <li><a href="#">Info messaggio</a></li>
+                      <li><a class="delete_message" href="#">Elimina messaggio</a></li>
+                    </ul>
+                  </div>
+                  <span class="message_time">11.30</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- /schermo chat -->
+          <!-- schermo chat -->
+          <ul class="chat_screen">
+            <li class="message_row">
+              <div class="message_container">
+                <div class="message_text">
+                  <p>Mi e' piaciuto il concerto ieri!</p>
+                </div>
+                <div class="message_info">
+                  <div class="message_options">
+                    <i class="fas fa-angle-down"></i>
+                    <ul class="message_options_list">
+                      <li><a href="#">Info messaggio</a></li>
+                      <li><a class="delete_message" href="#">Elimina messaggio</a></li>
+                    </ul>
+                  </div>
+                  <span class="message_time">16.25</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- /schermo chat -->
+          <!-- schermo chat -->
+          <ul class="chat_screen">
+            <li class="message_row">
+              <div class="message_container">
+                <div class="message_text">
+                  <p>Ti ho inviato il link che mi hai chiesto.</p>
+                </div>
+                <div class="message_info">
+                  <div class="message_options">
+                    <i class="fas fa-angle-down"></i>
+                    <ul class="message_options_list">
+                      <li><a href="#">Info messaggio</a></li>
+                      <li><a class="delete_message" href="#">Elimina messaggio</a></li>
+                    </ul>
+                  </div>
+                  <span class="message_time">09.05</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- /schermo chat -->
+          <!-- schermo chat -->
+          <ul class="chat_screen">
+            <li class="message_row">
+              <div class="message_container">
+                <div class="message_text">
+                  <p>Si domani ti chiamo e andiamo al mare :D</p>
+                </div>
+                <div class="message_info">
+                  <div class="message_options">
+                    <i class="fas fa-angle-down"></i>
+                    <ul class="message_options_list">
+                      <li><a href="#">Info messaggio</a></li>
+                      <li><a class="delete_message" href="#">Elimina messaggio</a></li>
+                    </ul>
+                  </div>
+                  <span class="message_time">00.30</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- /schermo chat -->
+          <!-- schermo chat -->
+          <ul class="chat_screen">
+            <li class="message_row">
+              <div class="message_container">
+                <div class="message_text">
+                  <p>Ho chiamato tutti e gliel'ho detto.</p>
+                </div>
+                <div class="message_info">
+                  <div class="message_options">
+                    <i class="fas fa-angle-down"></i>
+                    <ul class="message_options_list">
+                      <li><a href="#">Info messaggio</a></li>
+                      <li><a class="delete_message" href="#">Elimina messaggio</a></li>
+                    </ul>
+                  </div>
+                  <span class="message_time">13.15</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- /schermo chat -->
+          <!-- schermo chat -->
+          <ul class="chat_screen">
+            <li class="message_row">
+              <div class="message_container">
+                <div class="message_text">
+                  <p>Salutami tua mamma. un abbraccio</p>
+                </div>
+                <div class="message_info">
+                  <div class="message_options">
+                    <i class="fas fa-angle-down"></i>
+                    <ul class="message_options_list">
+                      <li><a href="#">Info messaggio</a></li>
+                      <li><a class="delete_message" href="#">Elimina messaggio</a></li>
+                    </ul>
+                  </div>
+                  <span class="message_time">19.27</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- /schermo chat -->
+          <!-- schermo chat -->
+          <ul class="chat_screen">
+            <li class="message_row">
+              <div class="message_container">
+                <div class="message_text">
+                  <p>Sono rientrato ora Bro.</p>
+                </div>
+                <div class="message_info">
+                  <div class="message_options">
+                    <i class="fas fa-angle-down"></i>
+                    <ul class="message_options_list">
+                      <li><a href="#">Info messaggio</a></li>
+                      <li><a class="delete_message" href="#">Elimina messaggio</a></li>
+                    </ul>
+                  </div>
+                  <span class="message_time">05.30</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- /schermo chat -->
+          <!-- schermo chat -->
+          <ul class="chat_screen">
             <li class="message_row">
               <div class="message_container">
                 <div class="message_text">
@@ -194,139 +342,8 @@
               </div>
             </li>
           </ul>
-          <ul class="chat_screen" data-chat = "2">
-            <li class="message_row">
-              <div class="message_container">
-                <div class="message_text">
-                  <p>Ciao</p>
-                </div>
-                <div class="message_info">
-                  <div class="message_options">
-                    <i class="fas fa-angle-down"></i>
-                    <ul class="message_options_list">
-                      <li><a href="#">Info messaggio</a></li>
-                      <li><a class="delete_message" href="#">Elimina messaggio</a></li>
-                    </ul>
-                  </div>
-                  <span class="message_time">12.30</span>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <ul class="chat_screen" data-chat = "3">
-            <li class="message_row">
-              <div class="message_container">
-                <div class="message_text">
-                  <p>Ciao</p>
-                </div>
-                <div class="message_info">
-                  <div class="message_options">
-                    <i class="fas fa-angle-down"></i>
-                    <ul class="message_options_list">
-                      <li><a href="#">Info messaggio</a></li>
-                      <li><a class="delete_message" href="#">Elimina messaggio</a></li>
-                    </ul>
-                  </div>
-                  <span class="message_time">12.30</span>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <ul class="chat_screen" data-chat = "4">
-            <li class="message_row">
-              <div class="message_container">
-                <div class="message_text">
-                  <p>Ciao</p>
-                </div>
-                <div class="message_info">
-                  <div class="message_options">
-                    <i class="fas fa-angle-down"></i>
-                    <ul class="message_options_list">
-                      <li><a href="#">Info messaggio</a></li>
-                      <li><a class="delete_message" href="#">Elimina messaggio</a></li>
-                    </ul>
-                  </div>
-                  <span class="message_time">12.30</span>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <ul class="chat_screen" data-chat = "5">
-            <li class="message_row">
-              <div class="message_container">
-                <div class="message_text">
-                  <p>Ciao</p>
-                </div>
-                <div class="message_info">
-                  <div class="message_options">
-                    <i class="fas fa-angle-down"></i>
-                    <ul class="message_options_list">
-                      <li><a href="#">Info messaggio</a></li>
-                      <li><a class="delete_message" href="#">Elimina messaggio</a></li>
-                    </ul>
-                  </div>
-                  <span class="message_time">12.30</span>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <ul class="chat_screen" data-chat = "6">
-            <li class="message_row">
-              <div class="message_container">
-                <div class="message_text">
-                  <p>Ciao</p>
-                </div>
-                <div class="message_info">
-                  <div class="message_options">
-                    <i class="fas fa-angle-down"></i>
-                    <ul class="message_options_list">
-                      <li><a href="#">Info messaggio</a></li>
-                      <li><a class="delete_message" href="#">Elimina messaggio</a></li>
-                    </ul>
-                  </div>
-                  <span class="message_time">12.30</span>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <ul class="chat_screen" data-chat = "7">
-            <li class="message_row">
-              <div class="message_container">
-                <div class="message_text">
-                  <p>Ciao</p>
-                </div>
-                <div class="message_info">
-                  <div class="message_options">
-                    <i class="fas fa-angle-down"></i>
-                    <ul class="message_options_list">
-                      <li><a href="#">Info messaggio</a></li>
-                      <li><a class="delete_message" href="#">Elimina messaggio</a></li>
-                    </ul>
-                  </div>
-                  <span class="message_time">12.30</span>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <ul class="chat_screen" data-chat = "8">
-            <li class="message_row">
-              <div class="message_container">
-                <div class="message_text">
-                  <p>Ciao</p>
-                </div>
-                <div class="message_info">
-                  <div class="message_options">
-                    <i class="fas fa-angle-down"></i>
-                    <ul class="message_options_list">
-                      <li><a href="#">Info messaggio</a></li>
-                      <li><a class="delete_message" href="#">Elimina messaggio</a></li>
-                    </ul>
-                  </div>
-                  <span class="message_time">12.30</span>
-                </div>
-              </div>
-            </li>
-          </ul>
+          <!-- /schermo chat -->
+          <!-- schermo chat -->
         </div>
         <!-- /inizio schermo chat -->
         <div class="chat_footer">
@@ -351,7 +368,7 @@
       <!-- CONTATTO -->
       <li class="contact">
         <div class="contact_img">
-          <img class="avatar" src="" alt="avatar">
+          <img class="avatar" src="" alt="">
         </div>
         <div class="contact_info">
           <div class="contact_info_top">
