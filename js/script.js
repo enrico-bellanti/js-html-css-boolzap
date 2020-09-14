@@ -57,9 +57,10 @@ $(document).ready(function() {
   //seleziona contatto ottieni chat corrispondente
   $(".contact").click(
   function(){
+    // riporta a 0 unita il valore del counter
+    $(this).find(".counter_message_unread").text("0");
+    // nascondiamo il campo notifica messaggio ricevuto
     $(this).find(".counter_message_unread").removeClass("active");
-    // riporta a 1 unita il valore del counter
-    $(this).find(".counter_message_unread").text("1");
     // seleziono l'indce del contatto cliccato
     var indexContact = $(this).index();
     // rimuovo sia a tutti i contatti che a tutte le screen chat la classe active
