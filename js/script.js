@@ -143,18 +143,22 @@ function sendMessage(text, indexContact) {
   if (isActive) {
     $(".chat_header_left_info .last_access").text(time);
   // quando non sto visualizzando la chat di riferimento
-  } else {
-    // salva la posizione del contatore corrispondente alla chat di riferimento
-    var unreadCounter = $(".contact:nth-child("+(indexContact+1)+") .counter_message_unread");
-    // // prendi il valore dal dom del contatore
-    var valueCounter = parseInt(unreadCounter.text());
-    console.log(valueCounter);
-    // aumenta di una unita il valore di 1 per ogni volta che si riceve un messaggio
-    // unreadCounter.text(valueCounter++);
 
-    // mostra il counter dei messaggi ricevuti quando non sto sulla chat corrispondente (notifica)
-    unreadCounter.addClass("active");
+
+  } else {
+    // seleziona la chat di riferimento e sala il numero del contenuto in una variabile
+    var element = $(".contact_list .contact:nth-child("+(indexContact+1)+") .counter_message_unread");
+    var valueCounter = parseInt(element.text());
+    console.log(valueCounter);
+    // aumenta di una unita
+    valueCounter++;
+    console.log(valueCounter);
+    // mostra a schermo la notifica del numero dei messaggi non letti
+    $(".contact:nth-child("+(indexContact+1)+") .counter_message_unread").text(valueCounter);
+    $(".contact:nth-child("+(indexContact+1)+") .counter_message_unread").addClass("active");
   }
+
+
   // resetto l'imput chat
   $("#text_input").val("");
   updateScroll();
