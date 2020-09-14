@@ -2,22 +2,29 @@ $(document).ready(function() {
 
   // al click sul bottone invia messaggio
   $( "#send_button" ).click(function() {
-    // ottieni l'index del contatto active
-    var indexContactActive = $(".contact.active").index();
-    sendMessage(null, indexContactActive);
-    setTimeout(function(){isWriting("Sta scrivendo...",indexContactActive)}, 2000);
-    var cpuReply = getRandomReply();
-    setTimeout(function(){sendMessage(cpuReply, indexContactActive)}, 5000);
+    // eseguo il programma se l'imput contiene testo
+    var textMessage = $("#text_input").val();
+    if (textMessage != "") {
+      // ottieni l'index del contatto active
+      var indexContactActive = $(".contact.active").index();
+      sendMessage(textMessage, indexContactActive);
+      setTimeout(function(){isWriting("Sta scrivendo...",indexContactActive)}, 2000);
+      setTimeout(function(){sendMessage(null, indexContactActive)}, 5000);
+    }
   });
   // premendo invio manda il messaggio
   $("#text_input").keydown(function(event){
     if (event.which == 13) {
-      // ottieni l'index del contatto active
-      var indexContactActive = $(".contact.active").index();
-      sendMessage(null, indexContactActive);
-      setTimeout(function(){isWriting("Sta scrivendo...",indexContactActive)}, 2000);
-      var cpuReply = getRandomReply();
-      setTimeout(function(){sendMessage(cpuReply, indexContactActive)}, 5000);
+      // eseguo il programma se l'imput contiene testo
+      var textMessage = $("#text_input").val();
+      if (textMessage != "") {
+        // ottieni l'index del contatto active
+        var indexContactActive = $(".contact.active").index();
+        sendMessage(textMessage, indexContactActive);
+        setTimeout(function(){isWriting("Sta scrivendo...",indexContactActive)}, 2000);
+        setTimeout(function(){sendMessage(null, indexContactActive)}, 5000);
+      }
+
     }
   });
 
@@ -110,16 +117,15 @@ function sendMessage(text, indexContact) {
   var template = $(".template .message_row").clone();
   // salva l'orario in una variabile
   var time = clock();
-
   // distinguo un messaggio in entrata da uno in uscita
-  if (text == null) {
+  if (text != null) {
     // salvo il contanuto della casella input
     var textMessage = $("#text_input").val();
     // inserisci la classe sent
     template.addClass("sent");
   } else {
     // inserisco nella variabile textMessage il testo del mittente
-    var textMessage = text;
+    var textMessage = getRandomReply();
     // rinserisci l'orario dell'ultimo messaggio una volta finito "Sta scrivendo"
     $(".chat_header_left_info p").html("<p>Ultimo messaggio oggi alle <span class='last_access'></span></p>");
   }
@@ -161,9 +167,10 @@ function sendMessage(text, indexContact) {
 
   // resetto l'imput chat
   $("#text_input").val("");
+  // mostro l'ultimo messaggio
   updateScroll();
 }
-
+// fine funzione sendMessage
 
 function clock() {
   var d = new Date();
