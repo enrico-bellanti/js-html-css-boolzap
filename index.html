@@ -45,7 +45,7 @@
         <!-- search bar -->
         <div class="search_bar">
           <span class="search_icon"><i class="fas fa-search"></i></span>
-          <input id="input_search" type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+          <input id="input_search" type="text" name="input_search" placeholder="Cerca o inizia una nuova chat">
         </div>
         <!-- /search bar -->
         <!-- contact list -->
@@ -53,7 +53,7 @@
           <ul>
             <li class="contact active">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_1.jpg" alt="">
+                <img class="avatar" src="img/avatar_1.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_row_top">
@@ -62,13 +62,13 @@
                 </div>
                 <div class="contact_row_bottom">
                   <p class="last_typed_message">Ciao come stai?</p>
-                  <span class="counter_message_unread">0</span>
+                  <span class="counter_message_unread">1</span>
                 </div>
               </div>
             </li>
             <li class="contact">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_2.jpg" alt="">
+                <img class="avatar" src="img/avatar_2.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_row_top">
@@ -77,25 +77,28 @@
                 </div>
                 <div class="contact_row_bottom">
                   <p class="last_typed_message">Mi e' piaciuto il concerto ieri!</p>
-                  <span class="counter_message_unread">0</span>
+                  <span class="counter_message_unread">1</span>
                 </div>
               </div>
             </li>
             <li class="contact">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_3.jpg" alt="">
+                <img class="avatar" src="img/avatar_3.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_row_top">
                   <h4 class="contact_name">Samuele</h4>
                   <span class="last_typed_time">09.05</span>
                 </div>
-                <p class="last_typed_message">Ti ho inviato il link che mi hai chiesto.</p>
+                <div class="contact_row_bottom">
+                  <p class="last_typed_message">Ti ho inviato il link che mi hai chiesto.</p>
+                  <span class="counter_message_unread">1</span>
+                </div>
               </div>
             </li>
             <li class="contact">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_4.jpg" alt="">
+                <img class="avatar" src="img/avatar_4.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_row_top">
@@ -104,13 +107,13 @@
                 </div>
                 <div class="contact_row_bottom">
                   <p class="last_typed_message">Si domani ti chiamo e andiamo al mare :D</p>
-                  <span class="counter_message_unread">0</span>
+                  <span class="counter_message_unread">1</span>
                 </div>
               </div>
             </li>
             <li class="contact">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_5.jpg" alt="">
+                <img class="avatar" src="img/avatar_5.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_row_top">
@@ -119,13 +122,13 @@
                 </div>
                 <div class="contact_row_bottom">
                   <p class="last_typed_message">Ho chiamato tutti e gliel'ho detto.</p>
-                  <span class="counter_message_unread">0</span>
+                  <span class="counter_message_unread">1</span>
                 </div>
               </div>
             </li>
             <li class="contact">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_6.jpg" alt="">
+                <img class="avatar" src="img/avatar_6.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_row_top">
@@ -134,13 +137,13 @@
                 </div>
                 <div class="contact_row_bottom">
                   <p class="last_typed_message">Salutami tua mamma. un abbraccio</p>
-                  <span class="counter_message_unread">0</span>
+                  <span class="counter_message_unread">1</span>
                 </div>
               </div>
             </li>
             <li class="contact">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_7.jpg" alt="">
+                <img class="avatar" src="img/avatar_7.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_row_top">
@@ -149,13 +152,13 @@
                 </div>
                 <div class="contact_row_bottom">
                   <p class="last_typed_message">Sono rientrato ora Bro.</p>
-                  <span class="counter_message_unread">0</span>
+                  <span class="counter_message_unread">1</span>
                 </div>
               </div>
             </li>
             <li class="contact">
               <div class="contact_img">
-                <img class="avatar" src="img\avatar_8.jpg" alt="">
+                <img class="avatar" src="img/avatar_8.jpg" alt="">
               </div>
               <div class="contact_info">
                 <div class="contact_row_top">
@@ -164,11 +167,11 @@
                 </div>
                 <div class="contact_row_bottom">
                   <p class="last_typed_message">Allora per domani ci siamo tutti!</p>
-                  <span class="counter_message_unread">0</span>
+                  <span class="counter_message_unread">1</span>
                 </div>
               </div>
             </li>
-          <ul>
+          </ul>
         </div>
         <!-- /contact list -->
       </nav>
@@ -369,7 +372,7 @@
         <!-- /inizio schermo chat -->
         <div class="chat_footer">
           <div class="emoticons"><i class="far fa-smile"></i></div>
-          <input id="text_input" type="text" name="" value="" placeholder="Scrivi un messaggio">
+          <input id="text_input" type="text" name="message_input" placeholder="Scrivi un messaggio">
           <div class="send_button_container">
             <a href="#" id="send_button">
               <i class="fas fa-paper-plane"></i>
@@ -398,7 +401,7 @@
           </div>
           <div class="contact_row_bottom">
             <p class="last_typed_message"></p>
-            <span class="counter_message_unread">0</span>
+            <span class="counter_message_unread">1</span>
           </div>
         </div>
       </li>

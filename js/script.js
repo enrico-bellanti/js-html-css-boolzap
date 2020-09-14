@@ -136,19 +136,24 @@ function sendMessage(text, indexContact) {
   // inserisci l'orario nel contatto corrispondente
   $(".contact:nth-child("+(indexContact+1)+") .last_typed_time").text(time);
   // inserisci testo messaggio nel contatto corrispondente
-  $(".contact:nth-child("+(indexContact+1)+") .last_typed_message").text(textMessage);
+  $(".contact:nth-child("+(indexContact+1)+") .last_typed_message").text(textMessage).removeClass("green");
   // se la chat con l'index salvato inzialmente e' ancora active
   // allora scrivi nell'header l'orario dell'ultimo MESSAGGIO
   var isActive = $(".chat_screen:nth-child("+(indexContact + 1)+")").hasClass("active");
   if (isActive) {
     $(".chat_header_left_info .last_access").text(time);
+  // quando non sto visualizzando la chat di riferimento
   } else {
+    // salva la posizione del contatore corrispondente alla chat di riferimento
     var unreadCounter = $(".contact:nth-child("+(indexContact+1)+") .counter_message_unread");
-    unreadCounter.addClass("active");
-    // // aumentare il valore del contatore
-    // var valueCounter = parseInt(unreadCounter.text());
-    // console.log(valueCounter);
+    // // prendi il valore dal dom del contatore
+    var valueCounter = parseInt(unreadCounter.text());
+    console.log(valueCounter);
+    // aumenta di una unita il valore di 1 per ogni volta che si riceve un messaggio
     // unreadCounter.text(valueCounter++);
+
+    // mostra il counter dei messaggi ricevuti quando non sto sulla chat corrispondente (notifica)
+    unreadCounter.addClass("active");
   }
   // resetto l'imput chat
   $("#text_input").val("");
@@ -177,7 +182,7 @@ function isWriting(text, indexContact) {
     $(".chat_header_left_info p").text(text);
   }
   // scrivi sta scrivendo nel contatto della lista
-  $(".contact:nth-child("+(indexContact+1)+") .last_typed_message").text(text);
+  $(".contact:nth-child("+(indexContact+1)+") .last_typed_message").text(text).addClass("green");
 }
 
 // funzione per scrollare la pagina quando l'utente aggiunge testo

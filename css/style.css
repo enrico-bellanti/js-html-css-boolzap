@@ -427,3 +427,6 @@ a{
 .d_none{
   display: none;
 }
+.green {
+  color: #06d755;
+}
